@@ -2,6 +2,16 @@
 
 Aplicación móvil para gestión de pedidos con roles de cliente y administrador.
 
+**Demo en vivo:** https://gestion-pedidos-myhzuxgu4-tuneks-projects.vercel.app/
+
+## Prueba Rápida
+
+1. Abre el link del demo
+2. Inicia sesión como cliente (`cliente@cliente.com` / `asdasd`)
+3. Agrega productos al carrito y realiza un pedido
+4. Cierra sesión e inicia como administrador (`asd@asd.com` / `asdasd`)
+5. Ve todos los pedidos y cambia estados haciendo clic en "Estado: pendiente"
+
 ## Instalación
 
 ```bash
@@ -53,7 +63,17 @@ npx expo start
 
 ## Usuarios de Prueba
 
-Crear usuarios con los scripts incluidos:
+### Acceso directo (demo en vivo)
+
+**Administrador:**
+- Email: `asd@asd.com`
+- Contraseña: `asdasd`
+
+**Cliente:**
+- Email: `cliente@cliente.com`
+- Contraseña: `asdasd`
+
+### Crear usuarios locales
 
 ```bash
 node createDemoUsers.js  # Crea usuarios demo
