@@ -80,26 +80,39 @@ node createDemoUsers.js  # Crea usuarios demo
 node seedData.js         # Crea productos de prueba
 ```
 
-## Funcionalidades
+## Funcionalidades por Rol
 
 ### Cliente
-- Ver catálogo de productos
-- Agregar productos al carrito
-- Realizar pedidos
-- Ver historial de pedidos propios
+- **Catálogo**: Ver productos con stock disponible en tiempo real
+- **Carrito**: Agregar productos respetando límites de stock
+- **Pedidos**: Realizar compras y rastrear estado de sus pedidos
+- **Restricciones**: No puede ver pedidos de otros usuarios ni gestionar productos
 
 ### Administrador
-- Gestionar productos (crear, editar, eliminar)
-- Ver todos los pedidos del sistema
-- Cambiar estados de pedidos
-- Crear nuevos usuarios (clientes y administradores)
+- **Gestión de Productos**: Crear, editar, eliminar productos y controlar stock
+- **Gestión de Pedidos**: 
+  - Ver todos los pedidos del sistema con información del cliente
+  - Cambiar estados: pendiente → procesando → enviado → entregado → cancelado
+  - Hacer clic en "Estado: pendiente" para avanzar al siguiente estado
+- **Gestión de Usuarios**: Crear nuevos clientes y administradores
+- **Restricciones**: No tiene acceso al carrito ni puede realizar compras
 
-## Roles y Seguridad
+## Sistema de Seguridad
 
-- Clientes solo ven sus propios pedidos
-- Administradores ven todos los pedidos
+### Autenticación
+- Registro/login con email y contraseña
+- Validación de permisos basada en roles
 - Solo administradores pueden crear otros administradores
-- Carrito no disponible para administradores
+
+### Segregación de Datos
+- Cada cliente ve únicamente sus propios pedidos
+- Administradores acceden a todos los pedidos con filtros por usuario
+- Stock actualizado automáticamente tras cada compra
+
+### Control de Stock
+- Validación en tiempo real de disponibilidad
+- Reserva de productos en carrito
+- Actualización automática tras confirmar pedido
 
 ## Deployment Android
 
